@@ -105,3 +105,11 @@ gulp.task(task, [ /* 'stylelint' */ ], function (done) {
   return streams;
 
 });
+
+gulp.task('watch-sass', function () {
+  gulp.watch([
+    'src/stylesheets/**/*.scss'
+  ], function () {
+    runSequence(task);
+  });
+});
