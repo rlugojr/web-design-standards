@@ -4,12 +4,13 @@
   "description": "Open source UI components and visual style guide for U.S. government websites",
   "main": "src/js/start.js",
   "scripts": {
-    "prepublish": "gulp copy-vendor-sass && gulp build",
-    "prestart": "gulp copy-vendor-sass",
-    "build:package": "gulp copy-vendor-sass && gulp release",
     "build": "gulp build",
-    "test": "gulp eslint test",
+    "build:package": "gulp copy-vendor-sass && gulp release",
+    "prepublish": "gulp copy-vendor-sass build",
+    "prestart": "gulp copy-vendor-sass build",
     "preversion": "npm test",
+    "start": "fractal start --sync",
+    "test": "gulp eslint test",
     "version": "npm run prepublish",
     "watch": "watch 'npm run build' ./src"
   },
@@ -32,6 +33,8 @@
   },
   "homepage": "https://github.com/18F/web-design-standards#readme",
   "dependencies": {
+    "@frctl/fractal": "^1.0.11",
+    "@frctl/nunjucks": "^1.0.2",
     "bourbon": "^4.2.6",
     "bourbon-neat": "^1.7.3",
     "classlist-polyfill": "^1.0.3",
