@@ -4,7 +4,11 @@ const path = require('path');
 const fractal = require('@frctl/fractal').create();
 const dir = __dirname;
 
-fractal.set('project.title', 'Draft U.S. Web Design Standards');
+const context = {
+  title: 'Draft U.S. Web Design Standards'
+};
+
+fractal.set('project.title', context.title);
 
 // use Nunjucks as the templating engine
 fractal.components.engine(require('@frctl/nunjucks')({
@@ -14,6 +18,7 @@ fractal.components.engine(require('@frctl/nunjucks')({
 fractal.components.set('ext', '.njk');
 fractal.components.set('path', path.join(dir, 'components'));
 fractal.components.set('default.preview', '@uswds');
+fractal.components.set('default.context', context);
 
 fractal.docs.set('path', path.join(dir, 'docs'));
 
