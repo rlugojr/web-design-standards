@@ -1,39 +1,64 @@
 title: Header
 
+variants:
+  - name: default
+    label: Basic
+    context:
+      type: basic
+  - name: basic-mega
+    label: Basic with megamenu
+    context:
+      type: basic
+      megamenu: true
+  - name: extended
+    label: Extended
+    context:
+      type: extended
+  - name: extended-mega
+    label: Extended with megamenu
+    context:
+      type: extended
+      megamenu: true
+
 context:
   asset_path: '/assets/'
 
-  header:
-    search: true
+  class: usa-header-basic
 
-    primary:
-      sections:
-        - title: Section one
-          id: side-nav-1
-          links:
-            - text: Link one
-              href: javascript:void(0)
-            - text: Link two
-              href: javascript:void(0)
-            - text: Link three
-              href: javascript:void(0)
+  title:
+    text: Department of Web Standards
+    href: javascript:void(0)
 
-        - title: Section two (link)
-          href: javascript:void(0)
+  search: true
 
-        - title: Section three
-          id: side-nav-3
-          links:
-            - text: Link one
-              href: javascript:void(0)
-            - text: Link two
-              href: javascript:void(0)
-            - text: Link three
-              href: javascript:void(0)
+  primary:
+    sections:
+      - title: Section one
+        id: side-nav-1
+        links:
+          - text: Link one
+            href: javascript:void(0)
+          - text: Link two
+            href: javascript:void(0)
+          - text: Link three
+            href: javascript:void(0)
 
-    secondary:
-      links:
-        - text: Secondary link
-          href: javascript:void(0)
-        - text: Secondary link
-          href: javascript:void(0)
+      - title: Section two (link)
+        href: javascript:void(0)
+
+      - title: Section three
+        id: side-nav-3
+        links:
+          - text: Link one
+            href: javascript:void(0)
+          - text: Link two
+            href: javascript:void(0)
+          - text: Link three
+            href: javascript:void(0)
+
+  secondary:
+    links:
+      - text: Secondary link
+        href: javascript:void(0)
+      - text: Secondary link
+        href: javascript:void(0)

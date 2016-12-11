@@ -1,6 +1,8 @@
 <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 
-<header class="usa-header {% block header_class %}usa-header-basic{% endblock %}" role="banner">
+<header class="usa-header usa-header-{{ type }}
+  {% if megamenu %} usa-header-{{ type }}-megamenu{% endif %}"
+  role="banner">
   {% render '@banner' %}
   {% block before_nav %}<div class="usa-nav-container">{% endblock %}
 
@@ -8,7 +10,7 @@
       <button class="usa-menu-btn">Menu</button>
       <div class="usa-logo" id="logo">
         <em class="usa-logo-text">
-          <a href="#" accesskey="1" title="Home" aria-label="Home">Department of Web Standards</a>
+          <a href="{{ title.href }}" accesskey="1" title="Home" aria-label="Home">{{ title.text }}</a>
         </em>
       </div>
     </div>
@@ -19,9 +21,9 @@
           <img src="{{ asset_path }}img/close.svg" alt="close">
         </button>
 
-    {% if header.primary %}
+    {% if primary %}
         <ul class="usa-nav-primary usa-accordion">
-      {% for section in header.primary.sections %}
+      {% for section in primary.sections %}
         {% if section.href %}
           <li>
             <a class="usa-nav-link" href="{{ section.href }}">
@@ -34,7 +36,7 @@
               <span>{{ section.title }}</span>
             </button>
             <ul id="{{ section.id }}" class="usa-nav-submenu" aria-hidden="false">
-          {% for link in section.links %}
+            {% for link in section.links %}
               <li>
                 <a href="{{ link.href }}">{{ link.text }}</a>
               </li>
@@ -47,7 +49,7 @@
       {% endif %}
 
 {% block after_nav %}
-      {% if header.search %}
+      {% if search %}
         <form class="usa-search usa-search-small js-search-form">
           <div role="search">
             <label class="usa-sr-only" for="search-field-small">Search small</label>
