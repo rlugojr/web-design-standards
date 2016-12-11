@@ -1,0 +1,5 @@
+name: Government banner
+handle: banner
+
+context:
+  asset_path: '/assets/'
