@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Preview / {{ _target.name }}</title>
+    <link rel="stylesheet" href="/assets/css/uswds.css">
+  </head>
+  <body>
+    {% block main %}{{ yield }}{% endblock %}
+    <script src="/assets/js/uswds.min.js"></script>
+  </body>
+</html>
