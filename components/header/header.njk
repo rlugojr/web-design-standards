@@ -1,0 +1,69 @@
+<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+<header class="usa-header {% block header_class %}usa-header-basic{% endblock %}" role="banner">
+  {% render '@banner' %}
+  {% block before_nav %}<div class="usa-nav-container">{% endblock %}
+
+    <div class="usa-navbar">
+      <button class="usa-menu-btn">Menu</button>
+      <div class="usa-logo" id="logo">
+        <em class="usa-logo-text">
+          <a href="#" accesskey="1" title="Home" aria-label="Home">Department of Web Standards</a>
+        </em>
+      </div>
+    </div>
+
+    <nav role="navigation" class="usa-nav">
+      <div class="usa-nav-inner">
+        <button class="usa-nav-close">
+          <img src="{{ asset_path }}img/close.svg" alt="close">
+        </button>
+
+    {% if header.primary %}
+        <ul class="usa-nav-primary usa-accordion">
+      {% for section in header.primary.sections %}
+        {% if section.href %}
+          <li>
+            <a class="usa-nav-link" href="{{ section.href }}">
+              <span>{{ section.title }}</span>
+            </a>
+          </li>
+        {% else %}
+          <li>
+            <button class="usa-accordion-button usa-nav-link" aria-controls="{{ section.id }}">
+              <span>{{ section.title }}</span>
+            </button>
+            <ul id="{{ section.id }}" class="usa-nav-submenu" aria-hidden="false">
+          {% for link in section.links %}
+              <li>
+                <a href="{{ link.href }}">{{ link.text }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+{% block after_nav %}
+      {% if header.search %}
+        <form class="usa-search usa-search-small js-search-form">
+          <div role="search">
+            <label class="usa-sr-only" for="search-field-small">Search small</label>
+            <input id="search-field-small" type="search" name="search">
+            <button type="submit">
+              <span class="usa-sr-only">Search</span>
+            </button>
+          </div>
+        </form>
+      {% endif %}
+      </div>
+{% endblock %}
+
+    </nav>
+  </div>
+</header>
+
+<div class="usa-overlay"></div>
+<main id="main-content"></main>

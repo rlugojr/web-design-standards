@@ -1,0 +1,39 @@
+title: Header
+
+context:
+  asset_path: '/assets/'
+
+  header:
+    search: true
+
+    primary:
+      sections:
+        - title: Section one
+          id: side-nav-1
+          links:
+            - text: Link one
+              href: javascript:void(0)
+            - text: Link two
+              href: javascript:void(0)
+            - text: Link three
+              href: javascript:void(0)
+
+        - title: Section two (link)
+          href: javascript:void(0)
+
+        - title: Section three
+          id: side-nav-3
+          links:
+            - text: Link one
+              href: javascript:void(0)
+            - text: Link two
+              href: javascript:void(0)
+            - text: Link three
+              href: javascript:void(0)
+
+    secondary:
+      links:
+        - text: Secondary link
+          href: javascript:void(0)
+        - text: Secondary link
+          href: javascript:void(0)

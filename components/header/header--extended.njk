@@ -1,0 +1,38 @@
+{% extends '@header' %}
+
+{% block header_class %}usa-header-extended{% endblock %}
+
+{% block before_nav %}{% endblock %}
+
+{% block after_nav %}
+
+      {% if header.secondary %}
+        <div class="usa-nav-secondary">
+        {% if header.search %}
+          <form class="usa-search usa-search-small js-search-form usa-sr-only">
+            <div role="search">
+              <label class="usa-sr-only" for="search-field-small">Search small</label>
+              <input id="search-field-small" type="search" name="search">
+              <button type="submit">
+                <span class="usa-sr-only">Search</span>
+              </button>
+            </div>
+          </form>
+        {% endif %}
+
+          <ul class="usa-unstyled-list usa-nav-secondary-links">
+          {% if header.search %}
+            <li class="js-search-button-container">
+              <button class="usa-header-search-button js-search-button">Search</button>
+            </li>
+          {% endif %}
+          {% for link in header.secondary.links %}
+            <li>
+              <a href="{{ link.href }}">{{ link.text }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+{% endblock %}
