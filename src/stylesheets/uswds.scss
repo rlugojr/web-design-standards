@@ -29,6 +29,9 @@
 
 // old components
 
+// XXX this will eventually reference 'components/all'
+@import '../../components/all';
+
 @import 'components/accordions';
 @import 'components/alerts';
 @import 'components/footer';
@@ -40,6 +43,3 @@
 @import 'components/section';
 @import 'components/sidenav';
 @import 'components/skipnav';
-
-// new components
-@import '../../components/all';
