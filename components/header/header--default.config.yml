@@ -1,64 +1,77 @@
 title: Header
 
-variants:
-  - name: default
-    label: Basic
-    context:
-      type: basic
-  - name: basic-mega
-    label: Basic with megamenu
-    context:
-      type: basic
-      megamenu: true
-  - name: extended
-    label: Extended
-    context:
-      type: extended
-  - name: extended-mega
-    label: Extended with megamenu
-    context:
-      type: extended
-      megamenu: true
+display:
+  min-width: 320px
 
 context:
   asset_path: '/assets/'
-
-  class: usa-header-basic
-
-  title:
+  title: &basic_title
     text: Department of Web Standards
-    href: javascript:void(0)
+    href: &null_href javascript:void(0)
 
-  search: true
+variants:
 
-  primary:
-    sections:
-      - title: Section one
-        id: side-nav-1
+  - name: default
+    label: Basic
+
+    context:
+      primary: &basic_nav
+        - title: First section
+          id: one
+          links: &link_list
+            - text: One link
+              href: *null_href
+            - text: Another link
+              href: *null_href
+            - text: Yet another link
+              href: *null_href
+        - title: Second section
+          id: two
+          links: *link_list
+        - title: Third section
+          id: three
+          href: *null_href
+        - title: Fourth section
+          id: four
+          links: *link_list
+
+  - name: basic-mega
+    label: Basic with megamenu
+    context:
+      primary: &mega_sections
+        - title: First section
+          id: first
+          columns:
+            - links: *link_list
+            - links: *link_list
+            - links: *link_list
+            - links: *link_list
+        - title: Second section
+          id: second
+          columns:
+            - links: *link_list
+            - links: *link_list
+            - links: *link_list
+        - title: Third section
+          id: third
+          links: *link_list
+        - title: Fourth section
+          id: fourth
+          href: *null_href
+
+  - name: extended
+    label: Extended
+    context:
+      primary: *basic_nav
+      secondary: &extended_nav
         links:
-          - text: Link one
-            href: javascript:void(0)
-          - text: Link two
-            href: javascript:void(0)
-          - text: Link three
-            href: javascript:void(0)
+          - text: First link
+            href: *null_href
+          - text: Second link
+            href: *null_href
 
-      - title: Section two (link)
-        href: javascript:void(0)
-
-      - title: Section three
-        id: side-nav-3
-        links:
-          - text: Link one
-            href: javascript:void(0)
-          - text: Link two
-            href: javascript:void(0)
-          - text: Link three
-            href: javascript:void(0)
-
-  secondary:
-    links:
-      - text: Secondary link
-        href: javascript:void(0)
-      - text: Secondary link
-        href: javascript:void(0)
+  - name: extended-mega
+    label: Extended with megamenu
+    context:
+      primary: *mega_sections
+      secondary: *extended_nav

@@ -1,16 +1,17 @@
-  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
-  <header class="usa-header usa-header-basic" role="banner">
-    {% render '@banner' %}
-    <div class="usa-nav-container">
-      <div class="usa-navbar">
-        <button class="usa-menu-btn">Menu</button>
-        <div class="usa-logo" id="logo">
-          <em class="usa-logo-text">
-            <a href="{{ title.href }}" accesskey="1" title="Home" aria-label="Home">{{ title.text }}</a>
-          </em>
-        </div>
+<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+<header class="usa-header usa-header-basic usa-header-basic-megamenu" role="banner">
+  {% render '@banner' %}
+  <div class="usa-nav-container">
+    <div class="usa-navbar">
+      <button class="usa-menu-btn">Menu</button>
+      <div class="usa-logo" id="logo">
+        <em class="usa-logo-text">
+          <a href="#" accesskey="1" title="Home" aria-label="Home">Department of <br>Web Standards</a>
+        </em>
       </div>
-      <nav role="navigation" class="usa-nav">
+    </div>
+    <nav role="navigation" class="usa-nav">
+      <div class="usa-nav-inner">
         <button class="usa-nav-close">
           <img src="/assets/img/close.svg" alt="close">
         </button>
@@ -25,6 +26,21 @@
             <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="primary-nav-{{ section.id }}">
               <span>{{ section.title }}</span>
             </button>
+            {% if section.columns %}
+            <ul id="primary-nav-{{ section.id }}" class="usa-nav-submenu usa-megamenu usa-grid-full">
+              {% for column in section.columns %}
+              <li class="usa-megamenu-col">
+                <ul>
+                  {% for link in column.links %}
+                  <li>
+                    <a href="{{ link.href }}">{{ link.text }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endfor %}
+            </ul>
+            {% elif section.links %}
             <ul id="primary-nav-{{ section.id }}" class="usa-nav-submenu">
               {% for link in section.links %}
               <li>
@@ -32,6 +48,7 @@
               </li>
               {% endfor %}
             </ul>
+            {% endif %}
             {% endif %}
           </li>
           {% endfor %}
@@ -45,8 +62,9 @@
             </button>
           </div>
         </form>
-      </nav>
-    </div>
-  </header>
-  <div class="usa-overlay"></div>
-  <main id="main-content"></main>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="usa-overlay"></div>
+<main id="main-content"></main>
