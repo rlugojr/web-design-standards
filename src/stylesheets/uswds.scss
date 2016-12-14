@@ -27,8 +27,7 @@
 @import 'elements/table';
 @import 'elements/typography';
 
-
-// Components -------------- //
+// old components
 
 @import 'components/accordions';
 @import 'components/alerts';
@@ -36,7 +35,6 @@
 @import 'components/footer';
 @import 'components/forms';
 @import 'components/graphic-list';
-@import 'components/header';
 @import 'components/hero';
 @import 'components/layout';
 @import 'components/media-block';
@@ -45,3 +43,6 @@
 @import 'components/section';
 @import 'components/sidenav';
 @import 'components/skipnav';
+
+// new components
+@import '../../components/all';
