@@ -121,3 +121,8 @@ $nav-width:           951px !default;
 // 44 x 44 pixels hit target following Apple iOS Human Interface
 // Guidelines
 $hit-area: 4.4rem !default;
+
+// z-indexes
+$z-index-header:  7000 !default;
+$z-index-overlay: 8000 !default;
+$z-index-nav:     9000 !default;
