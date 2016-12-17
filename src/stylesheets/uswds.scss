@@ -22,9 +22,6 @@
 @import 'elements/list';
 @import 'elements/typography';
 
-// XXX this will eventually reference 'components/all'
-@import '../../components/all';
-
 // TODO colocate all of these
 @import 'components/accordions';
 @import 'components/alerts';
@@ -37,3 +34,6 @@
 @import 'components/section';
 @import 'components/sidenav';
 @import 'components/skipnav';
+
+// XXX this will eventually reference 'components/all'
+@import '../../components/all';
