@@ -12,7 +12,8 @@ fractal.set('project.title', context.title);
 
 // use Nunjucks as the templating engine
 fractal.components.engine(require('@frctl/nunjucks')({
-  filters: {}
+  filters: {},
+  paths: [dir]
 }));
 
 fractal.components.set('ext', '.njk');
