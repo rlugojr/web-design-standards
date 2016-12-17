@@ -1,0 +1,38 @@
+        <ul class="usa-nav-primary usa-accordion">
+        {% for section in primary %}
+          <li>
+          {% if section.href %}
+            <a class="usa-nav-link" href="{{ section.href }}">
+              {{ section.title }}
+            </a>
+          {% else %}
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="primary-nav-{{ section.id }}">
+              <span>{{ section.title }}</span>
+            </button>
+          {% if section.columns %}
+            <ul id="primary-nav-{{ section.id }}" class="usa-nav-submenu usa-megamenu usa-grid-full">
+              {% for column in section.columns %}
+              <li class="usa-megamenu-col">
+                <ul>
+                  {% for link in column.links %}
+                  <li>
+                    <a href="{{ link.href }}">{{ link.text }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endfor %}
+            </ul>
+            {% elif section.links %}
+            <ul id="primary-nav-{{ section.id }}" class="usa-nav-submenu">
+              {% for link in section.links %}
+              <li>
+                <a href="{{ link.href }}">{{ link.text }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          {% endif %}
+          </li>
+        {% endfor %}
+        </ul>

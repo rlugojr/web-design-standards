@@ -5,6 +5,8 @@ display:
 
 context:
   asset_path: '/assets/'
+  include_path: 'components/header/'
+
   title: &basic_title
     text: Department of Web Standards
     href: &null_href javascript:void(0)

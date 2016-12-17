@@ -1,78 +1,12 @@
-<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+{% include include_path + '_skip-nav.njk' %}
 <header class="usa-header usa-header-extended" role="banner">
   {% render '@banner' %}
-  <div class="usa-navbar">
-    <button class="usa-menu-btn">Menu</button>
-    <div class="usa-logo" id="logo">
-      <em class="usa-logo-text">
-        <a href="{{ title.href }}" accesskey="1" title="Home" aria-label="Home">{{ title.text }}</a>
-      </em>
-    </div>
-  </div>
+  {% include include_path + '_masthead.njk' %}
   <nav role="navigation" class="usa-nav">
     <div class="usa-nav-inner">
-      <button class="usa-nav-close">
-        <img src="/assets/img/close.svg" alt="close">
-      </button>
-      <ul class="usa-nav-primary usa-accordion">
-        {% for section in primary %}
-        <li>
-          {% if section.href %}
-            <a class="usa-nav-link" href="{{ section.href }}">
-              {{ section.title }}
-            </a>
-          {% else %}
-          <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="primary-nav-{{ section.id }}">
-            <span>{{ section.title }}</span>
-          </button>
-          {% if section.columns %}
-          <ul id="primary-nav-{{ section.id }}" class="usa-nav-submenu usa-megamenu usa-grid-full">
-            {% for column in section.columns %}
-            <li class="usa-megamenu-col">
-              <ul>
-                {% for link in column.links %}
-                <li>
-                  <a href="{{ link.href }}">{{ link.text }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            </li>
-            {% endfor %}
-          </ul>
-          {% elif section.links %}
-          <ul id="primary-nav-{{ section.id }}" class="usa-nav-submenu">
-            {% for link in section.links %}
-            <li>
-              <a href="{{ link.href }}">{{ link.text }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-      <div class="usa-nav-secondary">
-        <form class="usa-search usa-search-small js-search-form">
-          <div role="search">
-            <label class="usa-sr-only" for="search-field-small">Search small</label>
-            <input id="search-field-small" type="search" name="search">
-            <button type="submit">
-              <span class="usa-sr-only">Search</span>
-            </button>
-          </div>
-        </form>
-        <ul class="usa-unstyled-list usa-nav-secondary-links">
-          <li class="js-search-button-container">
-            <button class="usa-header-search-button js-search-button">Search</button>
-          </li>
-          {% for link in secondary.links %}
-          <li>
-            <a href="{{ link.href }}">{{ link.text }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+      {% include include_path + '_nav-close.njk' %}
+      {% include include_path + '_nav-primary.njk' %}
+      {% include include_path + '_extended-nav.njk' %}
     </div>
   </nav>
 </header>
