@@ -1,0 +1,33 @@
+name: Tables
+
+context:
+  columns:
+    - text: Document title
+    - text: Description
+    - text: Year
+  rows:
+    - cells:
+      - text: Declaration of Independence
+        scope: row
+      - text: Statement adopted by the Continental Congress declaring independence from the British Empire.
+      - text: 1776
+    - cells:
+      - text: Bill of Rights
+        scope: row
+      - text: The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms.
+      - text: 1791
+    - cells:
+      - text: Declaration of Sentiments
+        scope: row
+      - text: A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.
+      - text: 1848
+    - cells:
+      - text: Emancipation Proclamation
+        scope: row
+      - text: An executive order granting freedom to slaves in designated southern states.
+      - text: 1863
+
+variants:
+  - name: borderless
+    context:
+      modifier: borderless
