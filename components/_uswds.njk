@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>Preview / {{ _target.name }}</title>
     <link rel="stylesheet" href="/assets/css/uswds.css">
+    <style>
+      .preview-padded {
+        padding: 1rem;
+      }
+    </style>
   </head>
   <body>
     {% block main %}{{ yield }}{% endblock %}
