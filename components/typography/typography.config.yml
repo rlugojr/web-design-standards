@@ -1,0 +1,11 @@
+name: Typography
+
+context: 
+  heading:
+    levels: [1, 2, 3, 4, 5, 6]
+    short_text: Heading level
+    long_text: The quick brown fox jumped over the lazy dog, and so here we are
+  list_items:
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - Nulla quis dolor tempor, molestie urna et, tempus leo. Duis tempus, lacus a venenatis sagittis, sapien urna rhoncus orci, quis ornare nunc sem vel leo. Nulla rhoncus, lectus ac vestibulum blandit, massa eros elementum nibh, vel eleifend elit quam sed est. Ut iaculis quis risus quis tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent imperdiet sagittis risus, non malesuada velit. Nullam blandit enim malesuada arcu facilisis viverra.
+    - Proin at bibendum augue. Aliquam placerat leo nunc, vel suscipit turpis ornare sit amet. Aliquam fringilla orci quis metus vestibulum venenatis. Sed volutpat, ligula dictum ornare bibendum, metus metus dapibus neque, id rutrum diam ante vitae erat. Sed eu purus vulputate, mattis nisi vel, eleifend nisl. Etiam et arcu orci. Aliquam ultricies scelerisque quam eu tristique. Fusce et sollicitudin erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Nulla tempor pulvinar est quis tempus. Etiam tincidunt libero enim, ut pellentesque nunc luctus in. Fusce dapibus placerat eros, eu porta nibh euismod id.

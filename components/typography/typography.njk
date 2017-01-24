@@ -1,0 +1,25 @@
+<main class="preview-padded">
+  {% for level in heading.levels %}
+  <h{{ level }}>{{ heading.short_text }} {{ level }}</h{{ level }}>
+
+  <h{{ level }}>{{ heading.long_text }}</h{{ level }}>
+
+  <p class="usa-font-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at bibendum augue. Aliquam placerat leo nunc, vel suscipit turpis ornare sit amet. Aliquam fringilla orci quis metus vestibulum venenatis. Sed volutpat, ligula dictum ornare bibendum, metus metus dapibus neque, id rutrum diam ante vitae erat. Sed eu purus vulputate, mattis nisi vel, eleifend nisl. Etiam et arcu orci. Aliquam ultricies scelerisque quam eu tristique. Fusce et sollicitudin erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Nulla tempor pulvinar est quis tempus. Etiam tincidunt libero enim, ut pellentesque nunc luctus in. Fusce dapibus placerat eros, eu porta nibh euismod id.</p>
+
+  <ul>
+  {% for item in list_items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+  </ul>
+
+  <p>Nulla quis dolor tempor, molestie urna et, tempus leo. Duis tempus, lacus a venenatis sagittis, sapien urna rhoncus orci, quis ornare nunc sem vel leo. Nulla rhoncus, lectus ac vestibulum blandit, massa eros elementum nibh, vel eleifend elit quam sed est. Ut iaculis quis risus quis tempor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent imperdiet sagittis risus, non malesuada velit. Nullam blandit enim malesuada arcu facilisis viverra.</p>
+
+  <ol>
+  {% for item in list_items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+  </ol>
+
+  {% endfor %}
+
+</main>
