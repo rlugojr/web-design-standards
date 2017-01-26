@@ -151,9 +151,20 @@ dfn {
 // Custom typography
 
 .usa-content {
-  p:not(.usa-font-lead) {
+
+  blockquote,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul {
     max-width: $text-max-width;
   }
+
 }
 
 .usa-content-list {
